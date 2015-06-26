@@ -31,7 +31,7 @@
 (use-package paradox
   :ensure t
   :init
-  (setq paradox-github-token nil))
+  (setq paradox-github-token t))
 
 (use-package move-dup
   :ensure t
@@ -127,6 +127,12 @@
   :bind (("C-<delete>" . forward-delete-word)
          ("C-<backspace>" . backward-delete-word)))
 
+(use-package markdown-mode
+  :ensure t
+  :mode (("\\.text$" . markdown-mode)
+         ("\\.markdown$" . markdown-mode)
+         ("\\.md$" . markdown-mode)))
+
 (use-package company
   :ensure t
   :init (add-hook 'prog-mode-hook 'company-mode)
@@ -157,12 +163,15 @@
   :config
   (add-to-list 'company-backends 'company-anaconda))
 
+(use-package js2-mode
+  :ensure t
+  :mode (("\\.js$" . js2-mode)))
+
 (use-package tern
-  :defer t
   :ensure t
   :ensure company-tern
   :config
-  (setq tern-command '("cmd" "/c" "tern"))
+  (setq tern-command '("tern"))
   (add-hook 'js2-mode-hook 'tern-mode))
 
 (use-package company-tern
