@@ -52,7 +52,14 @@
 (use-package flycheck
   :ensure t
   :init (setq flycheck-completion-system 'ido)
-  :config (add-hook 'python-mode-hook 'flycheck-mode))
+  :config
+  (add-hook 'python-mode-hook 'flycheck-mode))
+
+(use-package flycheck-pos-tip
+  :defer t
+  :ensure t
+  :init
+  (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -228,7 +235,6 @@
  '(delete-selection-mode t)
  '(echo-keystrokes 0.25)
  '(fill-column 79)
- '(flycheck-completion-system (quote ido))
  '(global-hl-line-mode t)
  '(global-hl-line-sticky-flag t)
  '(global-subword-mode t)
