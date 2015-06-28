@@ -7,3 +7,5 @@ elpa
 ido.last
 *.elc
 *~
+projectile.cache
+smex-items
