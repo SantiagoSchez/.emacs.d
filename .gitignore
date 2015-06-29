@@ -1,5 +1,6 @@
 .mc-lists.el
 .python-environments/
+eshell/
 projectile-bookmarks.eld
 auto-save-list
 url

@@ -8,51 +8,39 @@
 	global-hl-line-sticky-flag t
 	inhibit-startup-screen t
 	make-cursor-line-fully-visible nil)
+  (tool-bar-mode -1)
   (set-default 'cursor-type 'bar)
   (set-frame-font "Meslo LG S DZ-10")
   (global-hl-line-mode)
-  (show-paren-mode))
-
-;; The Solarized light/dark theme
-;; https://github.com/purcell/color-theme-sanityinc-solarized
-(use-package color-theme-sanityinc-solarized
-  :ensure t
-  :init
-  (if (display-graphic-p)
-      (load-theme 'sanityinc-solarized-light t)
-    (load-theme 'sanityinc-solarized-dark t))
-  :config
+  (show-paren-mode)
   (defun light ()
     "Activate a light color theme."
     (interactive)
-    (load-theme 'sanityinc-solarized-light t))
+    (load-theme 'solarized-light t))
   (defun dark ()
     "Activate a dark color theme."
     (interactive)
-    (load-theme 'sanityinc-solarized-dark t)))
+    (load-theme 'solarized-dark t)))
 
-;; Improves the mode line by showing and reorganizing the displayed information
+;; The Solarized light/dark themes
+;; https://github.com/bbatsov/solarized-emacs
+(use-package solarized-theme
+  :ensure t
+  :config
+  (setq x-underline-at-descent-line t)
+  (if (display-graphic-p)
+      (load-theme 'solarized-light t)
+    (load-theme 'solarized-dark t)))
+
+;; Improves the mode line by showing and reorganising the displayed information
 ;; Also it works nice with solarized theme
 ;; https://github.com/Malabarba/smart-mode-line/
 (use-package smart-mode-line
   :ensure t
   :init
   (setq sml/no-confirm-load-theme t
-	sml/theme 'light)
-  (sml/setup)
-  :config
-  (defadvice light (after light-mode-line)
-    (custom-set-faces
-     '(mode-line-inactive ((t :foreground "grey20" :background "#fdf6e3" :inverse-video nil)))
-     '(mode-line ((t :foreground "black" :background "grey85" :inverse-video nil))))
-    (sml/apply-theme 'light))
-  (ad-activate 'light)
-  (defadvice dark (after dark-mode-line)
-    (custom-set-faces
-     '(mode-line-inactive ((t :foreground "gray60" :background "#51727a" :inverse-video nil)))
-     '(mode-line ((t :foreground "gray60" :background "#073642" :inverse-video nil))))
-    (sml/apply-theme 'dark))
-  (ad-activate 'dark))
+	sml/theme 'automatic)
+  (sml/setup))
 
 ;; Colorful parens, brackets, curly braces, etc. by level
 ;; https://github.com/Fanael/rainbow-delimiters
@@ -69,5 +57,24 @@
   (require 'volatile-highlights)
   (volatile-highlights-mode t)
   :diminish volatile-highlights-mode)
+
+;; Change theme by day or night-theme
+;; https://github.com/hadronzoo/theme-changer
+(use-package theme-changer
+  :ensure t
+  :init
+  (setq calendar-location-name "Spain"
+	calendar-latitude 38.98
+	calendar-longitude -3.92)
+  :config
+  (change-theme 'solarized-light 'solarized-dark))
+
+;; More efficient line numbering
+;; http://elpa.gnu.org/packages/nlinum.html
+(use-package nlinum
+  :ensure t
+  :config
+  (setq nlinum-format "%4d \u2502 ")
+  (add-hook 'prog-mode-hook 'nlinum-mode))
 
 (provide 'init-visuals)

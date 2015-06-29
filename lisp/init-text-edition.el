@@ -3,7 +3,8 @@
   :init (provide 'init-text-edition-base)
   :config
   (set-fill-column 79)
-  (delete-selection-mode))
+  (delete-selection-mode)
+  (setq-default indent-tabs-mode nil))
 
 ;; Allows to move and duplicate lines
 ;; https://github.com/wyuenho/move-dup

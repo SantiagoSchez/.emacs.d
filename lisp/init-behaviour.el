@@ -10,7 +10,6 @@
 	scroll-conservatively 101
 	text-mode-hook '(turn-on-flyspell text-mode-hook-identify visual-line-mode)
 	load-prefer-newer t)
-  (fset 'yes-or-no-p 'y-or-n-p)
-  (global-auto-revert-mode 1))
+  (fset 'yes-or-no-p 'y-or-n-p))
 
 (provide 'init-behaviour)
