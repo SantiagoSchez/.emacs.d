@@ -1,6 +1,7 @@
 ;; Base config
 (use-package init-prog-base
   :init
+  (provide 'init-prog-base)
   (defun font-lock-comment-annotations ()
     (font-lock-add-keywords
      nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):"
