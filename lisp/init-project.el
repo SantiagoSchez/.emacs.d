@@ -14,7 +14,8 @@
   :bind (("C-c C-f" . helm-projectile-find-file))
   :config
   (setq projectile-completion-system 'helm
-        projectile-indexing-method 'alien)
+        projectile-indexing-method 'alien
+        helm-split-window-in-side-p t)
   (helm-projectile-on))
 
 ;; Grep-like tool but faster

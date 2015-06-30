@@ -7,7 +7,8 @@
         echo-keystrokes 0.25
         global-hl-line-sticky-flag t
         inhibit-startup-screen t
-        make-cursor-line-fully-visible nil)
+        make-cursor-line-fully-visible nil
+        frame-title-format '(buffer-file-name "%f" ("%b")))
   (tool-bar-mode -1)
   (set-default 'cursor-type 'bar)
   (set-frame-font "Meslo LG S DZ-10")

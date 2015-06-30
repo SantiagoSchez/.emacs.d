@@ -8,7 +8,9 @@
         mouse-wheel-progressive-speed nil
         mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control)))
         scroll-conservatively 101
-        text-mode-hook '(turn-on-flyspell text-mode-hook-identify visual-line-mode)
+        text-mode-hook '(turn-on-flyspell
+                         text-mode-hook-identify
+                         visual-line-mode)
         load-prefer-newer t)
   (fset 'yes-or-no-p 'y-or-n-p))
 

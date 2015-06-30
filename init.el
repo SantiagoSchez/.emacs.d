@@ -16,5 +16,6 @@
 (require 'init-python)
 (require 'init-javascript)
 (require 'init-markdown)
+(require 'init-scratch-message)
 
 ;; End init.el
