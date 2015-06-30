@@ -19,6 +19,6 @@
   :ensure t
   :init
   (setq paradox-github-token t
-	paradox-column-width-package 30))
+        paradox-column-width-package 30))
 
 (provide 'init-package-management)

@@ -3,11 +3,11 @@
   :init (provide 'init-visuals-base)
   :config
   (setq column-number-mode t
-	default-frame-alist '((font . "Meslo LG S DZ-10"))
-	echo-keystrokes 0.25
-	global-hl-line-sticky-flag t
-	inhibit-startup-screen t
-	make-cursor-line-fully-visible nil)
+        default-frame-alist '((font . "Meslo LG S DZ-10"))
+        echo-keystrokes 0.25
+        global-hl-line-sticky-flag t
+        inhibit-startup-screen t
+        make-cursor-line-fully-visible nil)
   (tool-bar-mode -1)
   (set-default 'cursor-type 'bar)
   (set-frame-font "Meslo LG S DZ-10")
@@ -39,7 +39,7 @@
   :ensure t
   :init
   (setq sml/no-confirm-load-theme t
-	sml/theme 'automatic)
+        sml/theme 'automatic)
   (sml/setup))
 
 ;; Colorful parens, brackets, curly braces, etc. by level
@@ -64,8 +64,8 @@
   :ensure t
   :init
   (setq calendar-location-name "Spain"
-	calendar-latitude 38.98
-	calendar-longitude -3.92)
+        calendar-latitude 38.98
+        calendar-longitude -3.92)
   :config
   (change-theme 'solarized-light 'solarized-dark))
 

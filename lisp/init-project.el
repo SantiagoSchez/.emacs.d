@@ -39,7 +39,8 @@
         sr-speedbar-default-width 20
         speedbar-show-unknown-files t)
   (defadvice sr-speedbar-open (before open-sr-speedbar-no-golden-ratio activate)
-    (golden-ratio-mode -1)
+    (golden-ratio-mode -1))
+  (defadvice sr-speedbar-open (after open-sr-speedbar-const-width activate)
     (with-current-buffer sr-speedbar-buffer-name
       (setq window-size-fixed 'width)))
   (defadvice sr-speedbar-close (after close-sr-speedbar-golden-ratio activate)
@@ -53,6 +54,8 @@
   :config
   (defadvice helm-projectile-find-file (after locate-file activate)
     (if (sr-speedbar-exist-p)
-        (projectile-speedbar-open-current-buffer-in-tree))))
+        (projectile-speedbar-open-current-buffer-in-tree)))
+  (defadvice speedbar-item-load (after speedbar-highlight-file activate)
+    (projectile-speedbar-open-current-buffer-in-tree)))
 
 (provide 'init-project)

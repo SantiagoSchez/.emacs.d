@@ -1,11 +1,10 @@
 ;; Base config
-
 (use-package init-ido-base
   :init (provide 'init-ido-base)
   :config
   (setq ido-enable-dot-prefix t
-	ido-enable-flex-matching t
-	ido-everywhere t)
+        ido-enable-flex-matching t
+        ido-everywhere t)
   (ido-mode t))
 
 ;; Using fuzzy matching with IDO
@@ -15,7 +14,7 @@
   :init (flx-ido-mode 1)
   :config
   (setq flx-ido-threshold 1000
-	ido-use-faces nil))
+        ido-use-faces nil))
 
 ;; Sets IDO mode to vertical instead horizontal
 ;; https://github.com/creichert/ido-vertical-mode.el
@@ -37,6 +36,6 @@
   :ensure t
   :init (smex-initialize)
   :bind (("M-x" . smex)
-	 ("M-X" . smex-major-mode-commands)))
+         ("M-X" . smex-major-mode-commands)))
 
 (provide 'init-ido)

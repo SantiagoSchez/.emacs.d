@@ -4,7 +4,7 @@
   (defun font-lock-comment-annotations ()
     (font-lock-add-keywords
      nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):"
-	    1 font-lock-warning-face t))))
+            1 font-lock-warning-face t))))
   (add-hook 'prog-mode-hook 'font-lock-comment-annotations))
 
 ;; Better indentation by keeping track of code blocks
@@ -25,17 +25,17 @@
   :init (add-hook 'prog-mode-hook 'company-mode)
   :config
   (setq company-idle-delay 0.2
-	;; min prefix of 2 chars
-	company-minimum-prefix-length 2
-	company-selection-wrap-around t
-	company-show-numbers t
-	company-dabbrev-downcase nil
-	company-transformers '(company-sort-by-occurrence))
+        ;; min prefix of 2 chars
+        company-minimum-prefix-length 2
+        company-selection-wrap-around t
+        company-show-numbers t
+        company-dabbrev-downcase nil
+        company-transformers '(company-sort-by-occurrence))
   (bind-keys :map company-active-map
-	     ("C-n" . company-select-next)
-	     ("C-p" . company-select-previous)
-	     ("C-d" . company-show-doc-buffer)
-	     ("<tab>" . company-complete))
+             ("C-n" . company-select-next)
+             ("C-p" . company-select-previous)
+             ("C-d" . company-show-doc-buffer)
+             ("<tab>" . company-complete))
   :bind ("C-." . company-complete))
 
 (provide 'init-prog)

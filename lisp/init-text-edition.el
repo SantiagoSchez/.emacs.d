@@ -11,19 +11,19 @@
 (use-package move-dup
   :ensure t
   :bind (("M-<up>" . md/move-lines-up)
-	 ("M-<down>" . md/move-lines-down)
-	 ("M-S-<up>" . md/duplicate-up)
-	 ("M-S-<down>" . md/duplicate-down)))
+         ("M-<down>" . md/move-lines-down)
+         ("M-S-<up>" . md/duplicate-up)
+         ("M-S-<down>" . md/duplicate-down)))
 
 ;; Provides an easier way to undo and redo
 ;; http://www.dr-qubit.org/emacs.php#undo-tree
 (use-package undo-tree
   :ensure t
   :init (setq undo-tree-visualizer-relative-timestamps t
-	      undo-tree-visualizer-timestamps t)
+              undo-tree-visualizer-timestamps t)
   :config (global-undo-tree-mode t)
   :bind (("C-z" . undo-tree-undo)
-	 ("C-S-z" . undo-tree-redo))
+         ("C-S-z" . undo-tree-redo))
   :diminish undo-tree-mode)
 
 ;; Multiple cursors, what else?
@@ -31,8 +31,8 @@
 (use-package multiple-cursors
   :ensure t
   :bind (("C->" . mc/mark-next-like-this)
-	 ("C-<" . mc/mark-previous-like-this)
-	 ("C-*" . mc/mark-all-like-this)))
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-*" . mc/mark-all-like-this)))
 
 ;; Better point movement by subwords
 ;; http://www.bytebucket.org/jpkotta/syntax-subword
@@ -49,7 +49,7 @@
     (interactive "p")
     (delete-region (point) (progn (syntax-subword-backward arg) (point))))
   :bind (("C-<delete>" . forward-delete-word)
-	 ("C-<backspace>" . backward-delete-word)))
+         ("C-<backspace>" . backward-delete-word)))
 
 ;; Join lines
 (use-package join-lines
