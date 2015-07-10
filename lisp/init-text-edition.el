@@ -4,7 +4,8 @@
   :config
   (set-fill-column 79)
   (delete-selection-mode)
-  (setq-default indent-tabs-mode nil))
+  (setq-default tab-width 4
+                indent-tabs-mode nil))
 
 ;; Allows to move and duplicate lines
 ;; https://github.com/wyuenho/move-dup

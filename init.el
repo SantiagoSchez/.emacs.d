@@ -1,6 +1,7 @@
 ;; Begin init.el -- Main entry point to Emacs configuration
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path "~/.emacs.d/externals")
 
 (require 'init-package-management)
 (require 'init-behaviour)
@@ -15,6 +16,7 @@
 (require 'init-flycheck)
 (require 'init-python)
 (require 'init-javascript)
+(require 'init-haxe)
 (require 'init-markdown)
 (require 'init-magit)
 (require 'init-scratch-message)
