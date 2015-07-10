@@ -2,8 +2,9 @@
 (use-package init-visuals-base
   :init (provide 'init-visuals-base)
   :config
-  (setq column-number-mode t
-        default-frame-alist '((font . "Meslo LG S DZ-10"))
+  (setq my/font "Source Code Pro-10"
+        column-number-mode t
+        default-frame-alist '((font . my/font))
         echo-keystrokes 0.25
         global-hl-line-sticky-flag t
         inhibit-startup-screen t
@@ -11,27 +12,46 @@
         frame-title-format '(buffer-file-name "%f" ("%b")))
   (tool-bar-mode -1)
   (set-default 'cursor-type 'bar)
-  (set-frame-font "Meslo LG S DZ-10")
+  (set-frame-font my/font)
   (global-hl-line-mode)
   (show-paren-mode)
-  (defun light ()
-    "Activate a light color theme."
+  (defun swap-day-night-theme ()
+    "Switch between day/night themes."
     (interactive)
-    (load-theme 'solarized-light t))
-  (defun dark ()
-    "Activate a dark color theme."
-    (interactive)
-    (load-theme 'solarized-dark t)))
+    (if (eq (frame-parameter (next-frame) 'background-mode) 'dark)
+        (load-theme day-theme t)
+      (load-theme night-theme t))))
 
 ;; The Solarized light/dark themes
 ;; https://github.com/bbatsov/solarized-emacs
 (use-package solarized-theme
   :ensure t
-  :config
-  (setq x-underline-at-descent-line t)
+  :disabled t
+  :init
+  (setq day-theme 'solarized-light
+        night-theme 'solarized-dark
+        x-underline-at-descent-line t)
   (if (display-graphic-p)
-      (load-theme 'solarized-light t)
-    (load-theme 'solarized-dark t)))
+      (load-theme night-theme t)
+    (load-theme day-theme t)))
+
+;; Tomorrow night themes
+;; https://github.com/purcell/color-theme-sanityinc-tomorrow
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t
+  :init
+  (setq day-theme 'sanityinc-tomorrow-day
+        night-theme 'sanityinc-tomorrow-eighties)
+  (if (display-graphic-p)
+      (load-theme night-theme t)
+    (load-theme day-theme t))
+  :config
+  (defun apply-custom-faces ()
+    (set-face-background 'fringe (face-attribute 'default :background) nil)
+    (set-face-background 'linum (face-attribute 'default :background) nil))
+  (add-hook 'after-init-hook 'apply-custom-faces)
+  (defadvice swap-day-night-theme (after swap-day-night-theme-after activate)
+    (apply-custom-faces)))
 
 ;; Improves the mode line by showing and reorganising the displayed information
 ;; Also it works nice with solarized theme
@@ -40,14 +60,20 @@
   :ensure t
   :init
   (setq sml/no-confirm-load-theme t
-        sml/theme 'automatic)
+        sml/theme 'respectful)
   (sml/setup))
 
 ;; Colorful parens, brackets, curly braces, etc. by level
 ;; https://github.com/Fanael/rainbow-delimiters
 (use-package rainbow-delimiters
   :ensure t
-  :init (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+  :init
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  :config
+  (setq rainbow-delimiters-max-face-count 1)
+  (set-face-attribute 'rainbow-delimiters-unmatched-face nil
+                      :foreground 'unspecified
+                      :inherit 'error))
 
 ;; Highlight changes and other things visually
 ;; https://github.com/k-talo/volatile-highlights.el
@@ -68,7 +94,7 @@
         calendar-latitude 38.98
         calendar-longitude -3.92)
   :config
-  (change-theme 'solarized-light 'solarized-dark))
+  (change-theme day-theme night-theme))
 
 ;; More efficient line numbering
 ;; http://elpa.gnu.org/packages/nlinum.html
