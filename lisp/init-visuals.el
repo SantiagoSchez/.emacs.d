@@ -101,8 +101,7 @@
 (use-package nlinum
   :ensure t
   :config
-  (setq nlinum-format "%4d \u2502 ")
-  (add-hook 'prog-mode-hook 'nlinum-mode))
+  (setq nlinum-format "%4d \u2502 "))
 
 ;; Displays tildes on empty lines at the end of file
 ;; https://github.com/jmickelin/vim-empty-lines-mode
