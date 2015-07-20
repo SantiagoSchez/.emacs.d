@@ -4,7 +4,6 @@
   :config
   (setq my/font "Source Code Pro-10"
         column-number-mode t
-        default-frame-alist '((font . my/font))
         echo-keystrokes 0.25
         global-hl-line-sticky-flag t
         inhibit-startup-screen t
