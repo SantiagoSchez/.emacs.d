@@ -16,4 +16,10 @@
          ("C-r" . vr/isearch-backward)
          ("C-s" . vr/isearch-forward)))
 
+;; Mode to help you to move the cursor within Emacs
+;; https://github.com/winterTTr/ace-jump-mode
+(use-package ace-jump-mode
+  :ensure t
+  :bind (("C-c SPC" . ace-jump-mode)))
+
 (provide 'init-search)

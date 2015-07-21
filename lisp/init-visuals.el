@@ -4,7 +4,6 @@
   :config
   (setq my/font "Source Code Pro-10"
         column-number-mode t
-        default-frame-alist '((font . my/font))
         echo-keystrokes 0.25
         global-hl-line-sticky-flag t
         inhibit-startup-screen t
@@ -101,8 +100,7 @@
 (use-package nlinum
   :ensure t
   :config
-  (setq nlinum-format "%4d \u2502 ")
-  (add-hook 'prog-mode-hook 'nlinum-mode))
+  (setq nlinum-format "%4d \u2502 "))
 
 ;; Displays tildes on empty lines at the end of file
 ;; https://github.com/jmickelin/vim-empty-lines-mode

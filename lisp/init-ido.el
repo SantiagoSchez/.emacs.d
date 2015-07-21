@@ -21,7 +21,7 @@
 (use-package ido-vertical-mode
   :ensure t
   :init (ido-vertical-mode)
-  :config (setq ido-vertical-define-keys 'C-n-C-p-up-down))
+  :config (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right))
 
 ;; Allows to use IDO wherever it is possible in Emacs
 ;; https://github.com/DarwinAwardWinner/ido-ubiquitous
