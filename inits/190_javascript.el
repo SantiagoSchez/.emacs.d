@@ -38,6 +38,5 @@
 ;; https://github.com/proofit404/company-tern
 (use-package company-tern
   :ensure t
+  :ensure company
   :config (add-to-list 'company-backends 'company-tern))
-
-(provide 'init-javascript)

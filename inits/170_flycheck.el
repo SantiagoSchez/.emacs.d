@@ -13,5 +13,3 @@
   :ensure t
   :init
   (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
-
-(provide 'init-flycheck)

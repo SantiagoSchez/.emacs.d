@@ -11,7 +11,6 @@
 ;; https://github.com/proofit404/company-anaconda
 (use-package company-anaconda
   :ensure t
+  :ensure company
   :config
   (add-to-list 'company-backends 'company-anaconda))
-
-(provide 'init-python)

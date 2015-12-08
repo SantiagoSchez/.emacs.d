@@ -24,5 +24,3 @@
   (define-key dired-mode-map (kbd "C-M-u") 'dired-up-directory)
   (define-key dired-mode-map (kbd "M-o") #'my/dired-linux-open)
   (define-key dired-mode-map (kbd "C-x C-q") 'wdired-change-to-wdired-mode))
-
-(provide 'init-file-management)

@@ -3,5 +3,3 @@
 (use-package funda-haxe-mode
   :config
   (setq funda-haxe-indent-offset 4))
-
-(provide 'init-haxe)

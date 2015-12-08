@@ -1,12 +1,3 @@
-(use-package init-windows-base
-  :init (provide 'init-windows-base)
-  :config (windmove-default-keybindings))
-
-;; Provides undo/redo for windows layout
-;; http://www.emacswiki.org/emacs/WinnerMode
-(use-package winner
-  :init (winner-mode))
-
 ;; Fix windows size on focus
 ;; https://github.com/roman/golden-ratio.el
 (use-package golden-ratio
@@ -40,5 +31,3 @@
                                      "dired-mode"
                                      "pdf-outline-buffer-mode"
                                      "speedbar-mode")))
-
-(provide 'init-windows)

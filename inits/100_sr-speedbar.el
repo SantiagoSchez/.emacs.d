@@ -1,34 +1,3 @@
-;; Projectile project management
-;; https://github.com/bbatsov/projectile
-(use-package projectile
-  :ensure t
-  :diminish projectile-mode
-  :config
-  (setq projectile-keymap-prefix (kbd "C-c p")
-        projectile-enable-caching t)
-  (add-hook 'prog-mode-hook 'projectile-global-mode))
-
-;; Helm integration with Projectile
-(use-package helm-projectile
-  :ensure t
-  :bind (("C-c C-f" . helm-projectile-find-file))
-  :config
-  (setq projectile-completion-system 'helm
-        projectile-indexing-method 'alien
-        helm-split-window-in-side-p t)
-  (helm-projectile-on))
-
-;; Grep-like tool but faster
-;; https://github.com/Wilfred/ag.el
-(use-package ag
-  :ensure t
-  :ensure wgrep
-  :ensure wgrep-ag
-  :config
-  (bind-keys :map ag-mode-map
-             ("q" . kill-this-buffer))
-  (setq ag-highlight-search t))
-
 ;; Speedbar in the own frame
 ;; http://www.emacswiki.org/emacs/SrSpeedbar
 (use-package sr-speedbar
@@ -58,5 +27,3 @@
         (projectile-speedbar-open-current-buffer-in-tree)))
   (defadvice speedbar-item-load (after speedbar-highlight-file activate)
     (projectile-speedbar-open-current-buffer-in-tree)))
-
-(provide 'init-project)
