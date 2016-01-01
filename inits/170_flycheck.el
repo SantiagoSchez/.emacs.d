@@ -5,6 +5,7 @@
   :init (setq flycheck-completion-system 'ido)
   :config
   (add-hook 'python-mode-hook 'flycheck-mode)
+  (add-hook 'js-mode-hook 'flycheck-mode)
   (add-hook 'js2-minor-mode-hook 'flycheck-mode))
 
 ;; Show errors and warnings at point position and not in minibuffer

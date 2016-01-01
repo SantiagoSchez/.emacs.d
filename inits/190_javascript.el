@@ -24,7 +24,8 @@
                                      "$"
                                      "jQuery"))
   (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
-  (add-hook 'js-mode-hook 'js2-minor-mode))
+  (add-hook 'js-mode-hook 'js2-minor-mode)
+  (setq js2-highlight-level 3))
 
 ;; Emacs ternjs integration (autocompletion and more)
 ;; https://github.com/marijnh/tern
@@ -33,6 +34,13 @@
   :config
   (setq tern-command '("tern"))
   (add-hook 'js2-minor-mode-hook 'tern-mode))
+
+;; Allows to create and edit the .tern-project file with Emacs GUI quickly
+;; M-x tern-prj-dialog
+;; https://github.com/kiwanami/emacs-tern-project-dialog
+(use-package tern-project-dialog
+  :ensure tern
+  :ensure widget-mvc)
 
 ;; Company bindings for tern
 ;; https://github.com/proofit404/company-tern
