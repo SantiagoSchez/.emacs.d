@@ -7,4 +7,6 @@
   (require 'smartparens-config)
   (show-smartparens-global-mode t)
   (smartparens-global-mode t)
-  (add-hook 'prog-mode-hook 'turn-on-smartparens-mode))
+  (add-hook 'prog-mode-hook 'turn-on-smartparens-mode)
+  (sp-pair "\"" "\"" :actions '(wrap))
+  (sp-pair "'" "'" :actions '(wrap)))
