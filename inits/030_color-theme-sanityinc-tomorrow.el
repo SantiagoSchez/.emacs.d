@@ -12,9 +12,7 @@
   :init
   (setq day-theme 'sanityinc-tomorrow-day
         night-theme 'sanityinc-tomorrow-eighties)
-  (if (display-graphic-p)
-      (load-theme night-theme t)
-    (load-theme day-theme t))
+  (load-theme night-theme t)
   :config
   (defun apply-custom-faces ()
     (set-face-background 'fringe (face-attribute 'default :background) nil)
@@ -28,6 +26,7 @@
 ;; https://github.com/hadronzoo/theme-changer
 (use-package theme-changer
   :ensure t
+  :disabled t
   :init
   (setq calendar-location-name "Spain"
         calendar-latitude 38.98
