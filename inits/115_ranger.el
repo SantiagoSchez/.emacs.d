@@ -3,7 +3,7 @@
 ;; https://github.com/ralesi/ranger.el
 (use-package ranger
   :ensure t
-  :config
+  :init
   (setq ranger-cleanup-on-disable t
         ranger-cleanup-eagerly t
         ranger-show-dotfiles t
@@ -12,6 +12,6 @@
         ranger-width-preview 0.55
         ranger-excluded-extensions '("mkv" "iso" "mp4")
         ranger-max-preview-size 20
-        ranger-dont-show-binary t)
-  :init
+        ranger-dont-show-binary t
+        ranger-hide-cursor nil)
   :bind ("<f10>" . ranger))

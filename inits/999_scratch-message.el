@@ -11,6 +11,25 @@
                    ";;                                                 " "\n"
                    ";;"))
 
+(defconst *sans* (concat
+                  ";;                                                " "\n"
+                  ";;                ██████████████████████          " "\n"
+                  ";;              ████                  ████        " "\n"
+                  ";;            ██                          ██      " "\n"
+                  ";;            ██                          ██      " "\n"
+                  ";;          ██                              ██    " "\n"
+                  ";;          ██                    ██████    ██          * dude..." "\n"
+                  ";;          ██                    ██████    ██          * you're going to have" "\n"
+                  ";;          ██    ██████    ██    ██████    ██            a bad time." "\n"
+                  ";;            ██          ██████          ██      " "\n"
+                  ";;          ████  ██                  ██  ████    " "\n"
+                  ";;          ██    ██████████████████████    ██    " "\n"
+                  ";;          ██      ██  ██  ██  ██  ██      ██    " "\n"
+                  ";;            ████    ██████████████    ████      " "\n"
+                  ";;                ████              ████          " "\n"
+                  ";;                    ██████████████              " "\n"
+                  ";;"))
+
 (defconst *flowey* (concat
                     ";;                                              " "\n"
                     ";;             ▄▄ ▀▀███▄▄▄  ▄▄████▀ ▄▄          " "\n"
@@ -29,7 +48,7 @@
 
 (let ((load-time (format "Load time: %.2f seconds" (- (float-time after-init-time) (float-time before-init-time)))))
   (setq initial-scratch-message
-        (concat *flowey*
+        (concat *sans*
                 "\n;; " (car (split-string (version) "\n"))
                 "\n;; " load-time
                 "\n;; " (format-time-string "%A %d %B %Y, %T")

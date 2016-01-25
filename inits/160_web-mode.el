@@ -3,4 +3,5 @@
   :mode (("\\.html$"  . web-mode)
          ("\\.xhtml$" . web-mode)
          ("\\.tmpl$"  . web-mode)
-         ("\\.tpl$"   . web-mode)))
+         ("\\.tpl$"   . web-mode)
+         ("\\.less$"  . css-mode)))
