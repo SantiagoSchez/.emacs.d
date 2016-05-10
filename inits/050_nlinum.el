@@ -3,4 +3,5 @@
 (use-package nlinum
   :ensure t
   :config
-  (setq nlinum-format "%4d \u2502 "))
+  (setq nlinum-format "%4d ")
+  (global-nlinum-mode))
