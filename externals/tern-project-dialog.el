@@ -22,7 +22,7 @@
 ;;    (expand-file-name ".." (file-name-directory (file-truename tern-path))))
 ;;  "installed tern-home.")
 
-(defvar tern-home "~/.npm/tern/0.16.0/package")
+(defvar tern-home "~/.npm/tern/0.17.0/package")
 
 (eval-when-compile
   (defmacro tern-prj-collect-gen (target)

@@ -33,7 +33,10 @@
   :ensure t
   :config
   (setq tern-command '("tern"))
-  (add-hook 'js2-minor-mode-hook 'tern-mode))
+  (add-hook 'js2-minor-mode-hook 'tern-mode)
+  (defun delete-tern-process ()
+    (interactive)
+    (delete-process "Tern")))
 
 ;; Allows to create and edit the .tern-project file with Emacs GUI quickly
 ;; M-x tern-prj-dialog
