@@ -4,4 +4,5 @@
   :ensure t
   :config
   (setq nlinum-format "%4d ")
-  (global-nlinum-mode))
+  (global-nlinum-mode)
+  (set-face-attribute 'linum nil :height 100))

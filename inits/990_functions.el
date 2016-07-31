@@ -732,15 +732,17 @@ Use negative prefix P to go backward."
 
 ;; Key bindings
 
-(global-set-key (kbd "C-c M-+")   'increase-default-font-height)
-(global-set-key (kbd "C-c M--")   'decrease-default-font-height)
-(global-set-key (kbd "C-c =")     'set-default-font-height)
-(global-set-key (kbd "C-c g")     'ag)
-(global-set-key (kbd "C-a")       'smart-beginning-of-line)
-(global-set-key (kbd "C-S-o")     'open-line-above)
-(global-set-key (kbd "C-o")       'open-line-below)
-(global-set-key (kbd "ESC M-p")   'describe-thing-in-popup)
-(global-set-key (kbd "ESC M-i")   'describe-thing-at-point)
-(global-set-key (kbd "C-x C-b")   'ibuffer)
+(global-set-key (kbd "C-c M-+")       'increase-default-font-height)
+(global-set-key (kbd "C-c M--")       'decrease-default-font-height)
+(global-set-key (kbd "C-c =")         'set-default-font-height)
+(global-set-key (kbd "C-c g")         'ag)
+(global-set-key (kbd "C-a")           'smart-beginning-of-line)
+(global-set-key (kbd "C-S-o")         'open-line-above)
+(global-set-key (kbd "C-o")           'open-line-below)
+(global-set-key (kbd "ESC M-p")       'describe-thing-in-popup)
+(global-set-key (kbd "ESC M-i")       'describe-thing-at-point)
+(global-set-key (kbd "C-x C-b")       'ibuffer)
+(global-set-key [C-mouse-4]           'text-scale-increase)
+(global-set-key [C-mouse-5]           'text-scale-decrease)
 
 ;;; 990_functions.el ends here
