@@ -5,5 +5,5 @@
   :ensure t
   :init
   (setq sml/no-confirm-load-theme t
-        sml/theme 'respectful)
+        sml/theme 'dark)
   (sml/setup))
